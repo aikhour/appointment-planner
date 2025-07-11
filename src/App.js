@@ -11,8 +11,14 @@ function App() {
     phoneNumber: '0434207764',
     email: 'memm@gmail.com'
   };
+  const defaultAppointment = {
+    name: 'memm time',
+    contact: 'memm',
+    date: 'date',
+    time: 'time'
+  };
 
-  const [ contacts, setContacts ] = useState([defaultContact]);
+  const [ contacts, setContacts ] = useState([]);
   const [ appointments, setAppointments ] = useState([]);
 
  const addContact = (name, phone, email) => {
@@ -29,20 +35,20 @@ function App() {
   const addAppointment = (name, contact, date, time) => {
     setAppointments([
       ...appointments,
-        {
-          name: {name},
-          contact: {contact},
-          date: {date},
-          time: {time}
-        }
-      ]);
-    };
+      {
+        name: name,
+        contact: contact,
+        date: date,
+        time: time,
+      },
+    ]);
+  };
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root/> }>
       <Route index element={ <Navigate to={ROUTES.CONTACTS} replace/> }/>
       <Route path={ROUTES.CONTACTS} element={ <ContactsPage contacts={contacts} addContact={addContact}/> /* Add props to ContactsPage */ }/>
-      <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage appointments={appointments} addAppointment={addAppointment}/> /* Add props to AppointmentsPage */ }/>
+      <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage appointments={appointments} contacts={contacts} addAppointment={addAppointment}/> /* Add props to AppointmentsPage */ }/>
     </Route>
   ));
   

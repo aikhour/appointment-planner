@@ -5,26 +5,26 @@ import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
 function App() {
-  
+
   const defaultContact = {
     name: 'memm',
     phoneNumber: '0434207764',
     email: 'memm@gmail.com'
-  }
+  };
 
   const [ contacts, setContacts ] = useState([defaultContact]);
   const [ appointments, setAppointments ] = useState([]);
 
-  const addContact = (name, number, email) => {
+ const addContact = (name, phone, email) => {
     setContacts([
-      ...contacts, 
-        {
-          name: {name},
-          phoneNumber: {number},
-          email: {email}
-        }
-      ]);
-    };
+      ...contacts,
+      {
+        name: name,
+        phone: phone,
+        email: email,
+      },
+    ]);
+  };
 
   const addAppointment = (name, contact, date, time) => {
     setAppointments([

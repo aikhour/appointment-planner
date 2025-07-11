@@ -6,6 +6,7 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
 function App() {
 
+  /*
   const defaultContact = {
     name: 'memm',
     phoneNumber: '0434207764',
@@ -16,7 +17,8 @@ function App() {
     contact: 'memm',
     date: 'date',
     time: 'time'
-  };
+  }; 
+  */
 
   const [ contacts, setContacts ] = useState([]);
   const [ appointments, setAppointments ] = useState([]);

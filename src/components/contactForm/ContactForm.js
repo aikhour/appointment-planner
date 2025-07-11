@@ -11,7 +11,6 @@ export const ContactForm = ({
 }) => {
   return (
     <>
-      <div>
         <form onSubmit={handleSubmit}>
           <label>Name</label>
           <input 
@@ -21,7 +20,7 @@ export const ContactForm = ({
             onChange={(e) => setName(e.target.value)}
             required/>
           <br/>
-          <label>Phone</label>
+          <label>Contact Phone</label>
           <input 
             type='text'
             name="phone"
@@ -42,7 +41,6 @@ export const ContactForm = ({
             type='submit'
             value="Submit" />
         </form>
-      </div>
     </>
   );
 };
